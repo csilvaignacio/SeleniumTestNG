@@ -42,7 +42,6 @@ public class NavegacionTest extends BaseTest {
 
         final var urlActual = driver.getCurrentUrl();
 
-        Logs.info("Verificando que url actual sea saucedemo");
         Assert.assertEquals(urlActual,url);
     }
 
