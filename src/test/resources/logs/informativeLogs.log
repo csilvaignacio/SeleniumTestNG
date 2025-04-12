@@ -1,0 +1,7 @@
+22:19:36.227 INFO  AUTOMATION - Suite iniciada: Default Suite
+22:19:38.514 INFO  AUTOMATION - Comenzando el test: ejercicio4Test
+22:19:38.588 ERROR AUTOMATION - Error al borrar la evidencia: src\test\resources\screenshots
+22:19:38.615 INFO  AUTOMATION - Se registra la url
+22:19:40.523 INFO  AUTOMATION - Test fallido: ejercicio4Test
+22:19:40.876 ERROR AUTOMATION - Test FALLADO: ejercicio4Test
+22:19:40.893 INFO  AUTOMATION - Suite finalizada: Default Suite
