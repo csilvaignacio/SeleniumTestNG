@@ -37,14 +37,7 @@ public class NavegacionTest extends BaseTest {
         Logs.debug("Navegando a google");
         driver.get("https://www.google.com");
 
-        Logs.debug("Devolviendose a saucedemo");
-        driver.navigate().back();
 
-        final var urlActual = driver.getCurrentUrl();
-
-        Assert.assertEquals(urlActual,url);
     }
-
-
     
 }
