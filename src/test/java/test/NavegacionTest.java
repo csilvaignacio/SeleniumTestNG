@@ -12,6 +12,8 @@ import utilities.Logs;
 
 public class NavegacionTest extends BaseTest {
 
+    private final String url = "https://www.saucedemo.com/v1/inventory.html";
+
     @Test(groups = {regression, smoke})
     public void ejercicio1Test() {
         final var url = "https://www.saucedemo.com/v1/inventory.html";
@@ -39,5 +41,13 @@ public class NavegacionTest extends BaseTest {
 
 
     }
-    
+
+    @Test
+    public void ejercicio3Test() {
+        driver.get(url);
+    }
+
+
+
+
 }
