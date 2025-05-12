@@ -3,13 +3,13 @@ package utilities;
 import org.openqa.selenium.WebDriver;
 
 public class WebDriverProvider {
-    private static final ThreadLocal<WebDriver> threadLocal = new ThreadLocal<>();
+    private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
     public void set(WebDriver driver){
-        threadLocal.set(driver);
+        driverThreadLocal.set(driver);
     }
 
     public WebDriver get(){
-        return threadLocal.get();
+        return driverThreadLocal.get();
     }
 }

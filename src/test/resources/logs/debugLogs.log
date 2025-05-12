@@ -1,17 +1,17 @@
-22:19:36.227 INFO  AUTOMATION - Suite iniciada: Default Suite
-22:19:36.394 DEBUG AUTOMATION - Inicializando Driver
-22:19:38.267 DEBUG AUTOMATION - Maximizando la pantalla
-22:19:38.314 DEBUG AUTOMATION - Borrando las cookes
-22:19:38.514 INFO  AUTOMATION - Comenzando el test: ejercicio4Test
-22:19:38.559 DEBUG AUTOMATION - Eliminando evidencia anterior
-22:19:38.588 ERROR AUTOMATION - Error al borrar la evidencia: src\test\resources\screenshots
-22:19:38.615 INFO  AUTOMATION - Se registra la url
-22:19:38.615 DEBUG AUTOMATION - Se navega a la url: https://www.tutorialspoint.com/selenium/practice/login.php
-22:19:39.867 DEBUG AUTOMATION - Before test stop de allure
-22:19:40.523 INFO  AUTOMATION - Test fallido: ejercicio4Test
-22:19:40.523 DEBUG AUTOMATION - Tomando screenshot
-22:19:40.669 DEBUG AUTOMATION - Tomando el page source de la pagina
-22:19:40.669 DEBUG AUTOMATION - Creando las directorios padres si es que no existen
-22:19:40.677 DEBUG AUTOMATION - Cerrando Driver
-22:19:40.876 ERROR AUTOMATION - Test FALLADO: ejercicio4Test
-22:19:40.893 INFO  AUTOMATION - Suite finalizada: Default Suite
+10:36:10.747 INFO  AUTOMATION - Suite iniciada: Default Suite
+10:36:16.251 DEBUG AUTOMATION - Inicializando Driver
+10:36:20.249 DEBUG AUTOMATION - Navegando a la página: https://www.saucedemo.com
+10:36:21.389 DEBUG AUTOMATION - Maximizando la pantalla
+10:36:21.442 DEBUG AUTOMATION - Borrando las cookes
+10:36:21.595 INFO  AUTOMATION - Comenzando el test: aboutTest
+10:36:21.667 DEBUG AUTOMATION - Eliminando evidencia anterior
+10:36:21.704 ERROR AUTOMATION - Error al borrar la evidencia: src\test\resources\screenshots
+10:36:21.743 DEBUG AUTOMATION - Ingresando userName y password
+10:36:21.743 INFO  AUTOMATION - Registrando localizadores
+10:36:22.050 DEBUG AUTOMATION - Verificando página principal
+10:36:24.184 DEBUG AUTOMATION - Verificando hípervinculo linkedin
+10:36:24.238 DEBUG AUTOMATION - Before test stop de allure
+10:36:24.254 INFO  AUTOMATION - Test exitoso: aboutTest
+10:36:24.256 DEBUG AUTOMATION - Cerrando Driver
+10:36:24.256 INFO  AUTOMATION - Test PASADO: aboutTest
+10:36:24.278 INFO  AUTOMATION - Suite finalizada: Default Suite
