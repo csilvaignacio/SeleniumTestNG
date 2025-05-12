@@ -1,17 +1,19 @@
-10:36:10.747 INFO  AUTOMATION - Suite iniciada: Default Suite
-10:36:16.251 DEBUG AUTOMATION - Inicializando Driver
-10:36:20.249 DEBUG AUTOMATION - Navegando a la página: https://www.saucedemo.com
-10:36:21.389 DEBUG AUTOMATION - Maximizando la pantalla
-10:36:21.442 DEBUG AUTOMATION - Borrando las cookes
-10:36:21.595 INFO  AUTOMATION - Comenzando el test: aboutTest
-10:36:21.667 DEBUG AUTOMATION - Eliminando evidencia anterior
-10:36:21.704 ERROR AUTOMATION - Error al borrar la evidencia: src\test\resources\screenshots
-10:36:21.743 DEBUG AUTOMATION - Ingresando userName y password
-10:36:21.743 INFO  AUTOMATION - Registrando localizadores
-10:36:22.050 DEBUG AUTOMATION - Verificando página principal
-10:36:24.184 DEBUG AUTOMATION - Verificando hípervinculo linkedin
-10:36:24.238 DEBUG AUTOMATION - Before test stop de allure
-10:36:24.254 INFO  AUTOMATION - Test exitoso: aboutTest
-10:36:24.256 DEBUG AUTOMATION - Cerrando Driver
-10:36:24.256 INFO  AUTOMATION - Test PASADO: aboutTest
-10:36:24.278 INFO  AUTOMATION - Suite finalizada: Default Suite
+16:08:15.991 INFO  AUTOMATION - Suite iniciada: Default Suite
+16:08:23.151 DEBUG AUTOMATION - Inicializando Driver
+16:08:26.233 DEBUG AUTOMATION - Navegando a la página: https://www.saucedemo.com
+16:08:27.062 DEBUG AUTOMATION - Maximizando la pantalla
+16:08:27.126 DEBUG AUTOMATION - Borrando las cookes
+16:08:27.315 INFO  AUTOMATION - Comenzando el test: logoutTest
+16:08:27.375 DEBUG AUTOMATION - Eliminando evidencia anterior
+16:08:27.421 ERROR AUTOMATION - Error al borrar la evidencia: src\test\resources\screenshots
+16:08:27.454 DEBUG AUTOMATION - Ingresando usuario y contraseña
+16:08:27.454 INFO  AUTOMATION - Registrando localizadores
+16:08:30.889 DEBUG AUTOMATION - Verificando que llegue a la pagina principal
+16:08:30.898 DEBUG AUTOMATION - Abriendo el burger menu
+16:08:32.990 DEBUG AUTOMATION - Clic en logout
+16:08:35.083 DEBUG AUTOMATION - Verificando retorno a página de login
+16:08:35.096 DEBUG AUTOMATION - Before test stop de allure
+16:08:35.110 INFO  AUTOMATION - Test exitoso: logoutTest
+16:08:35.113 DEBUG AUTOMATION - Cerrando Driver
+16:08:35.113 INFO  AUTOMATION - Test PASADO: logoutTest
+16:08:35.134 INFO  AUTOMATION - Suite finalizada: Default Suite

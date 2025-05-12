@@ -3,6 +3,7 @@ package test;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import jdk.jfr.Description;
+import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.By;
 import org.openqa.selenium.bidi.log.Log;
 import org.openqa.selenium.support.ui.Select;
@@ -234,21 +235,23 @@ public class NavegacionTest extends BaseTest {
     @Description("Verificar retorno a pagina de login al hacer clic en opcion ´logout´")
     @Severity(SeverityLevel.NORMAL)
     public void logoutTest() throws InterruptedException{
-        Logs.debug("Ingresando usuario y contraseña");
+        Logs.info("Ingresando usuario y contraseña");
         rellenarFormulario("standard_user", "secret_sauce");
         Thread.sleep(3000);
 
-        Logs.debug("Verificando que llegue a la pagina principal");
+        Logs.info("Verificando que llegue a la pagina principal");
         Assert.assertTrue(driver.getCurrentUrl().contains("inventory.html"));
 
-        Logs.debug("Abriendo el burger menu");
+        Logs.info("Abriendo el burger menu");
         driver.findElement(By.xpath("//*[@id=\"react-burger-menu-btn\"]")).click();
         Thread.sleep(2000);
 
-        Logs.debug("Clic en logout");
+        Logs.info("Clic en logout");
         driver.findElement(By.cssSelector("#logout_sidebar_link")).click();
+        Thread.sleep(2000);
 
-
+        Logs.info("Verificando retorno a página de login");
+        Assert.assertTrue(driver.getCurrentUrl().contains("https://www.saucedemo.com/"));
     }
 
 
