@@ -4,6 +4,7 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import jdk.jfr.Description;
 import org.openqa.selenium.By;
+import org.openqa.selenium.bidi.log.Log;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -228,6 +229,28 @@ public class NavegacionTest extends BaseTest {
         softAssert.assertEquals(optionAbout.getDomAttribute("href"), "https://saucelabs.com/","La pagina actual no es https://saucelabs.com/");
         softAssert.assertAll();
     }
+
+    @Test(groups = "regression")
+    @Description("Verificar retorno a pagina de login al hacer clic en opcion ´logout´")
+    @Severity(SeverityLevel.NORMAL)
+    public void logoutTest() throws InterruptedException{
+        Logs.debug("Ingresando usuario y contraseña");
+        rellenarFormulario("standard_user", "secret_sauce");
+        Thread.sleep(3000);
+
+        Logs.debug("Verificando que llegue a la pagina principal");
+        Assert.assertTrue(driver.getCurrentUrl().contains("inventory.html"));
+
+        Logs.debug("Abriendo el burger menu");
+        driver.findElement(By.xpath("//*[@id=\"react-burger-menu-btn\"]")).click();
+        Thread.sleep(2000);
+
+        Logs.debug("Clic en logout");
+        driver.findElement(By.cssSelector("#logout_sidebar_link")).click();
+
+
+    }
+
 
     private void rellenarFormulario(String userName, String pass){
         Logs.info("Registrando localizadores");
