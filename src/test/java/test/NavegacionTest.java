@@ -252,7 +252,10 @@ public class NavegacionTest extends BaseTest {
 
         Logs.info("Verificando retorno a página de login");
         Assert.assertTrue(driver.getCurrentUrl().contains("https://www.saucedemo.com/"));
+
+        driver.findElement(By.cssSelector("#logout_sidebar_link")).click();
     }
+
 
 
     private void rellenarFormulario(String userName, String pass){
