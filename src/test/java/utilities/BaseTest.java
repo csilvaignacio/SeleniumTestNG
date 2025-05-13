@@ -7,6 +7,7 @@ import listeners.SuiteListeners;
 import listeners.TestListeners;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -21,21 +22,18 @@ public class BaseTest {
     protected final String smoke = "regression";
     protected final String regression = "regression";
     protected WebDriver driver;
-    protected String url = "https://www.saucedemo.com";
+    protected WebDriverWait wait;
+
 
     @BeforeMethod(alwaysRun = true)
     public void masterSetUp(Method method) throws InterruptedException {
         // Aquí puedes agregar configuraciones generales previas a cada test
         faker = new Faker();
         softAssert = new SoftAssert();
-        driver = new EdgeDriver();
 
         // Se registra el inicio del test, mostrando el nombre del metodo
         Logs.debug("Inicializando Driver");
         driver = new EdgeDriver();
-
-        Logs.debug("Navegando a la página: " + url);
-        driver.get(url);
 
         Logs.debug("Maximizando la pantalla");
         driver.manage().window().maximize();
@@ -49,7 +47,7 @@ public class BaseTest {
     @AfterMethod(alwaysRun = true)
     public void masterTearDown(ITestResult result) {
         Logs.debug("Cerrando Driver");
-//        driver.quit();
+        driver.quit();
 
         // Se registra el resultado del test
         String testName = result.getMethod().getMethodName();

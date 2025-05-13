@@ -1,19 +1,18 @@
-16:08:15.991 INFO  AUTOMATION - Suite iniciada: Default Suite
-16:08:23.151 DEBUG AUTOMATION - Inicializando Driver
-16:08:26.233 DEBUG AUTOMATION - Navegando a la página: https://www.saucedemo.com
-16:08:27.062 DEBUG AUTOMATION - Maximizando la pantalla
-16:08:27.126 DEBUG AUTOMATION - Borrando las cookes
-16:08:27.315 INFO  AUTOMATION - Comenzando el test: logoutTest
-16:08:27.375 DEBUG AUTOMATION - Eliminando evidencia anterior
-16:08:27.421 ERROR AUTOMATION - Error al borrar la evidencia: src\test\resources\screenshots
-16:08:27.454 DEBUG AUTOMATION - Ingresando usuario y contraseña
-16:08:27.454 INFO  AUTOMATION - Registrando localizadores
-16:08:30.889 DEBUG AUTOMATION - Verificando que llegue a la pagina principal
-16:08:30.898 DEBUG AUTOMATION - Abriendo el burger menu
-16:08:32.990 DEBUG AUTOMATION - Clic en logout
-16:08:35.083 DEBUG AUTOMATION - Verificando retorno a página de login
-16:08:35.096 DEBUG AUTOMATION - Before test stop de allure
-16:08:35.110 INFO  AUTOMATION - Test exitoso: logoutTest
-16:08:35.113 DEBUG AUTOMATION - Cerrando Driver
-16:08:35.113 INFO  AUTOMATION - Test PASADO: logoutTest
-16:08:35.134 INFO  AUTOMATION - Suite finalizada: Default Suite
+12:51:24.579 INFO  AUTOMATION - Suite iniciada: Default Suite
+12:51:24.803 DEBUG AUTOMATION - Inicializando Driver
+12:51:29.911 DEBUG AUTOMATION - Maximizando la pantalla
+12:51:29.960 DEBUG AUTOMATION - Borrando las cookes
+12:51:30.106 INFO  AUTOMATION - Comenzando el test: test2
+12:51:30.163 DEBUG AUTOMATION - Eliminando evidencia anterior
+12:51:30.205 ERROR AUTOMATION - Error al borrar la evidencia: src\test\resources\screenshots
+12:51:31.454 DEBUG AUTOMATION - Pagina principa: 0D7479E614DED887819406D41129BF1A
+12:51:31.660 DEBUG AUTOMATION - Sets de ventanas: [0D7479E614DED887819406D41129BF1A, 497E697C70297F6B32CB660075F0CACB]
+12:51:31.965 INFO  AUTOMATION - Cerrando ventana
+12:51:33.304 INFO  AUTOMATION - Regresando a la pagina principal
+12:51:33.312 DEBUG AUTOMATION - Before test stop de allure
+12:51:33.327 INFO  AUTOMATION - Test fallido: test2
+12:51:33.327 DEBUG AUTOMATION - Tomando screenshot
+12:51:33.329 DEBUG AUTOMATION - Before test stop de allure
+12:51:33.329 INFO  AUTOMATION - Test fallido: test2
+12:51:33.329 DEBUG AUTOMATION - Tomando screenshot
+12:51:33.361 INFO  AUTOMATION - Suite finalizada: Default Suite

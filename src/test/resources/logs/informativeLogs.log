@@ -1,7 +1,8 @@
-16:08:15.991 INFO  AUTOMATION - Suite iniciada: Default Suite
-16:08:27.315 INFO  AUTOMATION - Comenzando el test: logoutTest
-16:08:27.421 ERROR AUTOMATION - Error al borrar la evidencia: src\test\resources\screenshots
-16:08:27.454 INFO  AUTOMATION - Registrando localizadores
-16:08:35.110 INFO  AUTOMATION - Test exitoso: logoutTest
-16:08:35.113 INFO  AUTOMATION - Test PASADO: logoutTest
-16:08:35.134 INFO  AUTOMATION - Suite finalizada: Default Suite
+12:51:24.579 INFO  AUTOMATION - Suite iniciada: Default Suite
+12:51:30.106 INFO  AUTOMATION - Comenzando el test: test2
+12:51:30.205 ERROR AUTOMATION - Error al borrar la evidencia: src\test\resources\screenshots
+12:51:31.965 INFO  AUTOMATION - Cerrando ventana
+12:51:33.304 INFO  AUTOMATION - Regresando a la pagina principal
+12:51:33.327 INFO  AUTOMATION - Test fallido: test2
+12:51:33.329 INFO  AUTOMATION - Test fallido: test2
+12:51:33.361 INFO  AUTOMATION - Suite finalizada: Default Suite

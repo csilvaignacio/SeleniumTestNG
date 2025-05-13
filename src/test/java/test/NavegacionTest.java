@@ -3,17 +3,23 @@ package test;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import jdk.jfr.Description;
-import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.bidi.log.Log;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.BaseTest;
 import utilities.Logs;
 
+import java.time.Duration;
+
 public class NavegacionTest extends BaseTest {
 
+    protected String url = "https://www.saucedemo.com";
 
     @Test(groups = {regression, smoke})
     public void ejercicio1Test() {
@@ -43,14 +49,13 @@ public class NavegacionTest extends BaseTest {
 
 
     @Test
-    public void usuarioInvalido() throws InterruptedException {
+    public void usuarioInvalido() {
         final var url = "https://www.saucedemo.com";
 
         Logs.debug("Navegando a la pagina: "+url);
         driver.get(url);
 
         Logs.debug("Esperando 3 segundos para que la pagina cargue");
-        Thread.sleep(3000);
 
         final var userNameLocator = By.cssSelector("#user-name");
         final var userName = driver.findElement(userNameLocator);
@@ -64,8 +69,6 @@ public class NavegacionTest extends BaseTest {
         final var buttom = driver.findElement(buttomLocator);
         buttom.click();
 
-        Thread.sleep(2000);
-
         final var errorLocator = By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]/h3");
         final var error = driver.findElement(errorLocator);
 
@@ -76,7 +79,7 @@ public class NavegacionTest extends BaseTest {
     }
 
     @Test
-    public void validarLogin() throws InterruptedException {
+    public void validarLogin(){
 
         final var url = "https://www.saucedemo.com/";
 
@@ -84,11 +87,9 @@ public class NavegacionTest extends BaseTest {
         driver.get(url);
 
         Logs.debug("generando espera de 3 segundos");
-        Thread.sleep(3000);
 
         rellenarFormulario("standard_user","secret_sauce");
 
-        Thread.sleep(2000);
         final var inventory_list = driver.findElement(By.className("inventory_list"));
 
         Logs.debug("Verificando que llegue a pagina principal");
@@ -96,11 +97,9 @@ public class NavegacionTest extends BaseTest {
     }
 
     @Test
-    public void detalleProductoTest() throws InterruptedException {
+    public void detalleProductoTest(){
         rellenarFormulario("standard_user","secret_sauce");
-        Thread.sleep(3000);
         final var listaDescripcion = driver.findElements(By.cssSelector("img[class='inventory_item_img']"));
-        Thread.sleep(3000);
 
         listaDescripcion.get(0).click();
 
@@ -124,15 +123,13 @@ public class NavegacionTest extends BaseTest {
     }
 
     @Test
-    public void dropdownTest() throws InterruptedException{
+    public void dropdownTest(){
         Logs.debug("Navegando a la pagina "+ this.url);
         driver.get(url);
 
         Logs.debug("Ingresando usuario y password valido");
-        Thread.sleep(1500);
         rellenarFormulario("standard_user","secret_sauce");
 
-        Thread.sleep(1500);
         softAssert.assertTrue(driver.getCurrentUrl().equals("https://www.saucedemo.com/inventory.html"));
 
         final var selectElement = driver.findElement(By.className("product_sort_container"));
@@ -149,13 +146,11 @@ public class NavegacionTest extends BaseTest {
     @Test(groups = "regression")
     @Description("Validando valores en precios de producto una vez invertido su orden de menor a mayor")
     @Severity(SeverityLevel.NORMAL)
-    public void dropdownPrecioTest() throws InterruptedException{
+    public void dropdownPrecioTest(){
         driver.get(url);
-        Thread.sleep(1000);
 
         rellenarFormulario("standard_user","secret_sauce");
         Assert.assertTrue(driver.getCurrentUrl().contains("inventory.html"));
-        Thread.sleep(1000);
 
         final var tituloPrincipal = driver.findElement(By.cssSelector(".app_logo"));
         final var titulo = tituloPrincipal.getText();
@@ -177,7 +172,7 @@ public class NavegacionTest extends BaseTest {
     @Test(groups = "regression")
     @Description("Validando hipervínculo Facebook")
     @Severity(SeverityLevel.NORMAL)
-    public void facebookTest() throws InterruptedException {
+    public void facebookTest(){
         Logs.debug("Ingresando userName y password");
         rellenarFormulario("standard_user", "secret_sauce");
 
@@ -195,7 +190,7 @@ public class NavegacionTest extends BaseTest {
     @Test(groups = "regression")
     @Description("Validando hipervínculo Linkedin")
     @Severity(SeverityLevel.NORMAL)
-    public void linkedinTest() throws InterruptedException {
+    public void linkedinTest(){
         Logs.debug("Ingresando userName y password");
         rellenarFormulario("standard_user", "secret_sauce");
 
@@ -213,7 +208,7 @@ public class NavegacionTest extends BaseTest {
     @Test(groups = "regression")
     @Description("Validando hipervínculo Linkedin")
     @Severity(SeverityLevel.NORMAL)
-    public void aboutTest() throws InterruptedException {
+    public void aboutTest(){
         Logs.debug("Ingresando userName y password");
         rellenarFormulario("standard_user", "secret_sauce");
 
@@ -221,7 +216,6 @@ public class NavegacionTest extends BaseTest {
         Assert.assertTrue(driver.getCurrentUrl().contains("/inventory.html"), "La página principal no esta cargando correctamente");
 
         driver.findElement(By.xpath("//*[@id=\"react-burger-menu-btn\"]")).click();
-        Thread.sleep(2000);
 
         final var optionAbout = driver.findElement(By.cssSelector("#about_sidebar_link"));
         Logs.debug("Verificando hípervinculo linkedin");
@@ -237,32 +231,53 @@ public class NavegacionTest extends BaseTest {
     public void logoutTest() throws InterruptedException{
         Logs.info("Ingresando usuario y contraseña");
         rellenarFormulario("standard_user", "secret_sauce");
-        Thread.sleep(3000);
+
 
         Logs.info("Verificando que llegue a la pagina principal");
         Assert.assertTrue(driver.getCurrentUrl().contains("inventory.html"));
 
         Logs.info("Abriendo el burger menu");
         driver.findElement(By.xpath("//*[@id=\"react-burger-menu-btn\"]")).click();
-        Thread.sleep(2000);
+
 
         Logs.info("Clic en logout");
         driver.findElement(By.cssSelector("#logout_sidebar_link")).click();
-        Thread.sleep(2000);
 
         Logs.info("Verificando retorno a página de login");
         Assert.assertTrue(driver.getCurrentUrl().contains("https://www.saucedemo.com/"));
 
-        driver.findElement(By.cssSelector("#logout_sidebar_link")).click();
+        Logs.info("Fin ejecucion");
     }
 
 
 
     private void rellenarFormulario(String userName, String pass){
-        Logs.info("Registrando localizadores");
-        driver.findElement(By.id("user-name")).sendKeys(userName);
-        driver.findElement(By.id("password")).sendKeys(pass);
-        driver.findElement(By.id("login-button")).click();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+        Logs.info("Navegando a la página principal");
+        driver.get(url);
+
+        Logs.info("Esperando que cargue la pagina principal");
+        final var userNameInput = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.id(userName)));
+
+        final var passwordInput = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.id(pass)));
+
+        final var loginButton = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.id("login-button")));
+
+        userNameInput.sendKeys(userName);
+        passwordInput.sendKeys(pass);
+        loginButton.click();
+
+        if (userName.equals("https://www.saucedemo.com/inventory.html")){
+            Logs.info("Esperando a que cargue la pagina de shopping");
+            wait.until(ExpectedConditions.
+                    visibilityOfElementLocated(By.className("inventory_list")));
+        }
+
+
     }
 
 
